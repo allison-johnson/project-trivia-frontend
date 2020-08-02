@@ -7,6 +7,8 @@ import InputBase from '@material-ui/core/InputBase'
 import { fade, makeStyles } from '@material-ui/core/styles';
 import MenuIcon from '@material-ui/icons/Menu';
 import SearchIcon from '@material-ui/icons/Search'
+import Menu from '@material-ui/core/Menu'
+import MenuItem from '@material-ui/core/MenuItem'
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -65,6 +67,15 @@ const useStyles = makeStyles((theme) => ({
 
 export default function Navbar() {
     const classes = useStyles();
+    const [anchorEl, setAnchorEl] = React.useState(null);
+
+    const handleClick = (event) => {
+        setAnchorEl(event.currentTarget);
+    }
+
+    const handleClose = () => {
+        setAnchorEl(null);
+    }
 
     return (
         <div className={classes.root}>
@@ -75,22 +86,35 @@ export default function Navbar() {
                 className={classes.menuButton}
                 color="inherit"
                 aria-label="open drawer"
+                aria-haspopup="true"
+                
               >
-              <MenuIcon />
+              <MenuIcon onClick={handleClick} />
               </IconButton>
-              <Typography className={classes.title} variant="h6" noWrap>
+              <Menu
+                  id="simple-menu"
+                  anchorEl={anchorEl}
+                  keepMounted
+                  open={Boolean(anchorEl)}
+                  onClose={handleClose}
+              >
+                  <MenuItem onClick={handleClose}>Sign Up</MenuItem>
+                  <MenuItem onClick={handleClose}>Log In</MenuItem>
+                  <MenuItem onClick={handleClose}>Log Out</MenuItem>
+              </Menu>
+              <Typography className={classes.title} id="navItemOne" variant="h6" noWrap>
                 Question Index
               </Typography>
 
-              <Typography className={classes.title} variant="h6" noWrap>
-                Random Trivia Question
+              <Typography className={classes.title} id="navItemTwo" variant="h6" noWrap>
+                10-Question Quiz
               </Typography>
 
-              <Typography className={classes.title} variant="h6" noWrap>
+              <Typography className={classes.title} id="navItemThree" variant="h6" noWrap>
                 Filter By Category
               </Typography>
 
-              <Typography className={classes.title} variant="h6" noWrap>
+              <Typography className={classes.title} id="navItemFour" variant="h6" noWrap>
                 Add a Question
               </Typography>
 {/* {              <div className={classes.search}>

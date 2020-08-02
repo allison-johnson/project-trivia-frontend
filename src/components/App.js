@@ -27,8 +27,8 @@ class App extends Component {
     return (
       <div>
         <Navbar />
-        <h1>Hello from my trivia app!</h1>
-        <Button>This is our first button!</Button>
+        <img className="trivia-img" src="https://cdn.pixabay.com/photo/2019/05/22/20/06/brainstorm-4222409_960_720.jpg" />
+        <Button>Ask Me Anything!</Button>
       </div>
     )
   }//render
