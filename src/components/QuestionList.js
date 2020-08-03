@@ -37,6 +37,7 @@ export class QuestionList extends Component {
       fetch(baseUrl + '/triviaQuestion', options)
         .then(res => res.json())
         .then(data => {
+            console.log("data: ", data)
             this.setState({
               questionList: data
             })

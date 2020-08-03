@@ -1,7 +1,10 @@
 import React, { Component } from 'react'
 import { Button } from '@material-ui/core';
 import CorrectAnswer from './CorrectAnswer'
+import axios from 'axios';
 let _ = require('lodash')
+
+const baseUrl = "https://express-trivia-api.herokuapp.com"
 
 export class Question extends Component {
     constructor(props) {
@@ -10,6 +13,7 @@ export class Question extends Component {
             question: this.props.info.question,
             correctAnswer: this.props.info.correct_answer,
             incorrectAnswers: this.props.info.incorrect_answers,
+            questionId: this.props.info._id,
             revealAnswer: false
         }
     }//constructor
@@ -19,6 +23,19 @@ export class Question extends Component {
         this.setState({
             revealAnswer: newReveal 
         })
+    }
+
+    handleDelete = (e) => {
+        let targetId = ""
+        if (e.target.id) {
+            targetId = e.target.id 
+        } else {
+            targetId = e.target.parentElement.id
+        }
+        console.log("targetId: ", targetId)
+        axios.delete(baseUrl + `/triviaQuestion/${targetId}`)
+            .then(response => response.data)
+            .catch(err => console.log(err))
     }
 
     render() {
@@ -50,7 +67,7 @@ export class Question extends Component {
                 <div className="question-buttons">
                     <Button variant="outlined" color="primary" onClick={this.toggleReveal}>{revealOrHide}</Button>
                     <Button variant="outlined" color="secondary">Edit Question</Button>
-                    <Button variant="outlined" color="secondary">Delete Question</Button>
+                    <Button variant="outlined" color="secondary"id={this.state.questionId} onClick={this.handleDelete}>Delete Question</Button>
                 </div>
                 {reveal}
             </div>
