@@ -3,8 +3,6 @@ import Question from './Question'
 
 const baseUrl = "https://express-trivia-api.herokuapp.com"
 
-//mode: "no-cors",
-
 const options = {
   method: 'GET',
   headers: {

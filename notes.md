@@ -3,7 +3,7 @@
 
 [x] Create App component with simple button ('Random Trivia Question') to test axios request
 
-[] Implement create action
+[x] Implement create action
 
 [] Implement delete action
 
