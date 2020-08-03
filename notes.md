@@ -1,12 +1,19 @@
 *To Do*
 [x] Get backend hosted
 
-[] Create App component with simple button ('Random Trivia Question') to test axios request
+[x] Create App component with simple button ('Random Trivia Question') to test axios request
+
+[] Implement create action
+
+[] Implement delete action
 
 [] Implement authentication with JWT 
     [] Setup backend/DB for authentication
     [] Create forms to sign up, login, and logout
     [] Send axios requests with form data to server
+    [] *stretch* User can save question to their 'favorites' list
+
+[] Adjust backend: get MORE questions from external API and just load a random subset of them (?) when 'Question Index' page loads
 
 [] Create nav bar: 
     - Random Trivia Question
@@ -14,7 +21,7 @@
     - Filter by Category (Dropdown menu)
     - Submit a Question
 
-[] Set up React router
+[x] Set up React router
 
 [] Create TriviaQuestion component that renders when path is '/randomquestion'
 

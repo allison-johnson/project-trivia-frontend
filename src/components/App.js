@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { Route, Switch } from 'react-router-dom';
-import { Button } from '@material-ui/core';
 import Navbar from './Navbar'
 import TriviaQuestion from './QuestionList'
 
