@@ -9,6 +9,11 @@ import MenuIcon from '@material-ui/icons/Menu';
 import SearchIcon from '@material-ui/icons/Search'
 import Menu from '@material-ui/core/Menu'
 import MenuItem from '@material-ui/core/MenuItem'
+//import Link from '@material-ui/core/Link'
+import TriviaQuestion from './QuestionList'
+import Home from './Home'
+import { Link } from 'react-router-dom'
+import { MemoryRouter as Router } from 'react-router'
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -67,7 +72,8 @@ const useStyles = makeStyles((theme) => ({
 
 export default function Navbar() {
     const classes = useStyles();
-    const [anchorEl, setAnchorEl] = React.useState(null);
+    const [anchorEl, setAnchorEl] = React.useState(null); //What is this?
+    const preventDefault = (event) => event.preventDefault();
 
     const handleClick = (event) => {
         setAnchorEl(event.currentTarget);
@@ -98,16 +104,13 @@ export default function Navbar() {
                   open={Boolean(anchorEl)}
                   onClose={handleClose}
               >
-                  <MenuItem onClick={handleClose}>Sign Up</MenuItem>
-                  <MenuItem onClick={handleClose}>Log In</MenuItem>
-                  <MenuItem onClick={handleClose}>Log Out</MenuItem>
+                <MenuItem><Link to="/user/signup">Sign Up</Link></MenuItem>
+                <MenuItem><Link to="/user/login">Log In</Link></MenuItem>
+                <MenuItem><Link to="/user/logout">Log Out</Link></MenuItem>
               </Menu>
-              <Typography className={classes.title} id="navItemOne" variant="h6" noWrap>
-                Question Index
-              </Typography>
 
-              <Typography className={classes.title} id="navItemTwo" variant="h6" noWrap>
-                10-Question Quiz
+              <Typography className={classes.title} id="navItemOne" variant="h6" noWrap>
+                <Link to="/triviaQuestion">Question Index</Link>
               </Typography>
 
               <Typography className={classes.title} id="navItemThree" variant="h6" noWrap>

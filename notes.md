@@ -1,7 +1,12 @@
 *To Do*
 [x] Get backend hosted
 
-[] Create App component with simple button ('Random Trivia Question') to test axios/fetch request
+[] Create App component with simple button ('Random Trivia Question') to test axios request
+
+[] Implement authentication with JWT 
+    [] Setup backend/DB for authentication
+    [] Create forms to sign up, login, and logout
+    [] Send axios requests with form data to server
 
 [] Create nav bar: 
     - Random Trivia Question
