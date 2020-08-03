@@ -3,17 +3,11 @@ import { Typography } from '@material-ui/core';
 import AppBar from '@material-ui/core/AppBar'
 import Toolbar from '@material-ui/core/Toolbar'
 import IconButton from '@material-ui/core/IconButton';
-import InputBase from '@material-ui/core/InputBase'
 import { fade, makeStyles } from '@material-ui/core/styles';
 import MenuIcon from '@material-ui/icons/Menu';
-import SearchIcon from '@material-ui/icons/Search'
 import Menu from '@material-ui/core/Menu'
 import MenuItem from '@material-ui/core/MenuItem'
-//import Link from '@material-ui/core/Link'
-import TriviaQuestion from './QuestionList'
-import Home from './Home'
 import { Link } from 'react-router-dom'
-import { MemoryRouter as Router } from 'react-router'
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -73,7 +67,6 @@ const useStyles = makeStyles((theme) => ({
 export default function Navbar() {
     const classes = useStyles();
     const [anchorEl, setAnchorEl] = React.useState(null); //What is this?
-    const preventDefault = (event) => event.preventDefault();
 
     const handleClick = (event) => {
         setAnchorEl(event.currentTarget);
@@ -114,11 +107,11 @@ export default function Navbar() {
               </Typography>
 
               <Typography className={classes.title} id="navItemThree" variant="h6" noWrap>
-                Filter By Category
+                <Link to="/triviaQuestion/new">Add a Question</Link>
               </Typography>
 
               <Typography className={classes.title} id="navItemFour" variant="h6" noWrap>
-                Add a Question
+                Filter By Category
               </Typography>
 {/* {              <div className={classes.search}>
                 <div className={classes.searchIcon}>

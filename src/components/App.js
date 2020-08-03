@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Route, Switch } from 'react-router-dom';
 import Navbar from './Navbar'
 import TriviaQuestion from './QuestionList'
+import NewQuestionForm from './NewQuestionForm'
 
 class App extends Component {
   constructor() {
@@ -18,10 +19,14 @@ class App extends Component {
         
         <div className="body">
           <Switch>
-            <Route path="/triviaQuestion" component={TriviaQuestion} />
+            <Route path="/triviaQuestion" component={TriviaQuestion} exact />
+          </Switch>
+
+          <Switch>
+            <Route path="/triviaQuestion/new" component={NewQuestionForm} />
           </Switch>
         </div>
-{/* {    <Button>Ask Me Anything!</Button>} */}
+
       </div>
     )
   }//render

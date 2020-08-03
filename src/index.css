@@ -23,3 +23,7 @@ code {
 #navItemOne,#navItemTwo,#navItemThree,#navItemFour {
   cursor: pointer
 }
+
+.new-question-form {
+  margin: 10px;
+}
