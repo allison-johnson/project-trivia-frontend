@@ -49,6 +49,8 @@ export class Question extends Component {
                 <ol type="A">{shuffledAnswerList}</ol>
                 <div className="question-buttons">
                     <Button variant="outlined" color="primary" onClick={this.toggleReveal}>{revealOrHide}</Button>
+                    <Button variant="outlined" color="secondary">Edit Question</Button>
+                    <Button variant="outlined" color="secondary">Delete Question</Button>
                 </div>
                 {reveal}
             </div>

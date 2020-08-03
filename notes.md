@@ -23,7 +23,7 @@
 
 [x] Set up React router
 
-[] Create TriviaQuestion component that renders when path is '/randomquestion'
+[] Create Filter By Category functionality
 
 *Routes*
 GET /triviaQuestion

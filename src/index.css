@@ -27,3 +27,7 @@ code {
 .new-question-form {
   margin: 10px;
 }
+
+.question-buttons > Button {
+  margin: 10px;
+}
